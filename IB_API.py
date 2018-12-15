@@ -9,17 +9,13 @@ from ibapi.contract import Contract
 from ibapi.order import Order
 import ibapi.ticktype as TickType
 import ibapi.order_state as OrderState
-
 import collections
 import csv
 import time
-
 import logging
 import datetime as dt
 
-
 logging.basicConfig(filename="logs/Log_Main.log", level=logging.INFO)
-
 
 # This is what we use to connect and interact with IB
 class TWS(EWrapper, EClient):
