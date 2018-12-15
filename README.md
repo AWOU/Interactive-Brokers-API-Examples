@@ -31,7 +31,7 @@ until you understand what the main parts are doing.
 
 ## How to use the API:
 
-Check the example uses file to see some examples of how you can use the api 
+Check the example uses file to see some examples of how you can use the API. 
 
 ## General Notes:
 
@@ -43,5 +43,13 @@ instead of straight to the log file.
 
 
 ##  Structure of the TWS classes: 
+
+There are three main TWS classes and they are all very similar despite a few differences. 
+
+
+
+
+
+
 
 
