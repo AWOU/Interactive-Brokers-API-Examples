@@ -41,8 +41,7 @@ functions. An example of this is how reqPositions is implemented so that it writ
 instead of straight to the log file. 
 
 
-
-##  Structure of the TWS classes: 
+##  Structure of the TWS classes (from the IB_API.py file): 
 
 There are three main TWS classes and they are all very similar despite a few differences. 
 
