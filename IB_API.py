@@ -9,15 +9,34 @@ from ibapi.contract import Contract
 from ibapi.order import Order
 import ibapi.ticktype as TickType
 import ibapi.order_state as OrderState
-import collections
 import csv
 import time
 import logging
 import datetime as dt
 
+
+'''
+This file is set up in three parts: 
+
+* The tws classes (which are what we actually used to place orders and connect to TWS/IB Gateway 
+
+* The 
+
+*
+
+
+'''
+
+
+# Setting up the default log location for the api to write to
 logging.basicConfig(filename="logs/Log_Main.log", level=logging.INFO)
 
 # This is what we use to connect and interact with IB
+'''
+This is the basic TWS class. It doesn't have anything extra to it except that I put some examples of how to override the
+default wrapper functions to do more specific tasks. In this case, it is writing certain results to csv files. 
+
+'''
 class TWS(EWrapper, EClient):
     def __init__(self):
         EWrapper.__init__(self)
@@ -57,7 +76,10 @@ class TWS(EWrapper, EClient):
         super().positionMultiEnd(reqId)
         print("Position Multi End. Request:", reqId)
 
+'''
+This is a more robust TWS class demonstrates how you make a class with all of the wrapper functions being overwritten. 
 
+'''
 class TWSINFO(EWrapper, EClient):
     def __init__(self):
         EWrapper.__init__(self)
@@ -331,7 +353,14 @@ class TWSINFO(EWrapper, EClient):
             contractDescription.contract.currency, derivSecTypes))
 
 
-# The new and most efficient tws class
+
+
+''' 
+This TWS Class is one that appends account and position info to lists that are built into the class for easy retrieval. 
+
+Examples of how this class is used is in the Example_API_Uses Class. 
+
+'''
 class TWSNEW(EWrapper, EClient):
     def __init__(self):
         EWrapper.__init__(self)
@@ -358,6 +387,7 @@ class TWSNEW(EWrapper, EClient):
 
 
 # End of TWS Classes ---------------------------------------------------------------------------------------------------
+
 
 
 # The old methods for TWSINFO ------------------------------------------------------------------------------------------
@@ -429,8 +459,6 @@ def update_net_liquidation(client_id):
 
 # ----------------------------------------------------------------------------------------------------------------------
 
-
-
 # The new methods for TWSNEW -------------------------------------------------------------------------------------------
 def get_positions(client_id):
     tws = TWSNEW()
@@ -460,7 +488,6 @@ def get_portfolio_info(client_id):
 
 # ----------------------------------------------------------------------------------------------------------------------
 
-
 # Simple read and write text file to get the next orderID that we need
 def getNextOrderId():
     file = open('txt/lastOrder.txt', 'r')
@@ -485,6 +512,10 @@ def create_contract(stock_symbol, sec_type, currency, exchange):
     contract.exchange = exchange
     return contract
 
+# This is an example of how our parameters should look
+# action = "BUY"
+# order_type = "MKT"
+# quantity = "100"
 def create_base_order(action,order_type, quantity):
     order = Order()
     order.action = action
@@ -512,62 +543,40 @@ def trailing_stop_order(action, quantity, trailingPercent, trailStopPrice):
     return order
 
 
-
 # -- | Place Trailing Stop Order | --
 
 def TRAIL(action, quantity, trailingPercent, trailStopPrice):
-
     order = Order()
-
     order.action = action
-
     order.orderType = "TRAIL"
-
     order.totalQuantity = quantity
-
     order.trailingPercent = trailingPercent
-
     order.trailStopPrice = trailStopPrice
-
-    return(order)
+    return order
 
 
 
 def MIT(action, quantity, price):
-
     order = Order()
-
     order.Action = action
-
     order.OrderType = "MIT"
-
     order.TotalQuantity = quantity
-
     order.AuxPrice = price
-
     return order
 
 
 def STP_LMT(action, quantity, limit_price, stop_price):
-
     order = Order()
-
     order.action = action
-
     order.orderType = "STP LMT"
-
     order.totalQuantity = quantity
-
     order.lmtPrice = limit_price
-
     order.auxPrice = stop_price
-
     return order
 
 
 def BracketOrder(parentOrderId: int, action: str, quantity: float, limitPrice: float,
                  takeProfitLimitPrice: float, stopLossPrice: float):
-
     # This will be our main or "parent" order
     parent = Order()
     parent.orderId = parentOrderId
@@ -608,7 +617,6 @@ def BracketOrder(parentOrderId: int, action: str, quantity: float, limitPrice: f
 
 def Bracket_With_Time(parentOrderId: int, action: str, quantity: float, limitPrice: float,
                  takeProfitLimitPrice: float, stopLossPrice: float, cancel_time: str, exit_time: str):
-
     # This will be our main or "parent" order
     parent = Order()
     parent.orderId = parentOrderId
