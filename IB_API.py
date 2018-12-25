@@ -14,7 +14,7 @@ import logging
 #logging.basicConfig(filename="logs/Log_Main.log", level=logging.INFO)
 
 # The new and most efficient tws class
-class TWSNEW(EWrapper, EClient):
+class TWS(EWrapper, EClient):
     def __init__(self):
         EWrapper.__init__(self)
         EClient.__init__(self, wrapper=self)
