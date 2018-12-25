@@ -24,8 +24,11 @@ class TWS(EWrapper, EClient):
 
     def accountSummary(self, reqId: int, account: str, tag: str, value: str,
                        currency: str):
-        super().accountSummary(reqId, account, tag, value, currency)
+        super().accountSummary(reqId, account, tag, value, currency) # Since this function is here to override the
+        # original accountSummary function, we call super() first with the same values for it and then add what we really
+        # want it to do under this
 
+        # Just adding it to a list that we can retrieve from the class
         self.account_info.append([account, tag, value, currency])
 
     def position(self, account: str, contract: Contract, position: float, avgCost: float):
@@ -38,7 +41,6 @@ class TWS(EWrapper, EClient):
 
         self.positions.append([account, contract.symbol, contract.secType, float(pos), float(avgCost), contract.conId])
 
-
 # End of TWS Classes ---------------------------------------------------------------------------------------------------
 
 # Simple read and write text file to get the next orderID that we need
@@ -50,3 +52,4 @@ def getNextOrderId():
     overwrite.write(str(nextOrder))
     overwrite.close()
     return nextOrder
+

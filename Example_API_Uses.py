@@ -1,7 +1,7 @@
 import IB_API
 import IB_Orders
 
-# Simple Example: connecting to TWS and placing an order
+# Simple Example: connecting to TWS and placing an market order
 tws = IB_API.TWS()
 tws.connect('127.0.0.1', 100, 7497)
 tws.startApi()
