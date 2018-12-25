@@ -5,7 +5,7 @@ there are not a whole lot of models or examples online that show you how to get 
 is why I created this project. It covers the basics of how to use the API and where to go from here if you would like
 to continue learning about the more advanced parts of it. 
 
-## Before you get started: 
+## Before You Get Started: 
 
 * Make sure to install the Interactive Brokers API at http://interactivebrokers.github.io/
     * Make sure read the instructions for installing it as a package in the file contents because it is not as simple
