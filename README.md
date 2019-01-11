@@ -21,11 +21,8 @@ Check the example uses file to see some examples of how you can use the API.
 Interactive Brokers has thorough documentation of their API at 
 https://interactivebrokers.github.io/tws-api/index.html that is well written and easy to navigate. 
 <br><br>
-Most of the functions in the TWS class are just wrapper functions overriding the default ibapi package functions
-which sends everything to a log file by default. This can be sufficient for most operations but can be easily 
-personalized if they need to be. An example of this is how the reqPositions function in the IB_API.py TWS class is 
-implemented so that it saves the data about the positions held to a list that can be easily retrieved instead of straight to the log 
-file. 
+The functions in the TWS class in IB_API.py are just wrapper functions overriding the default ibapi package functions
+which sends everything to a log file by default.
 
 
 
