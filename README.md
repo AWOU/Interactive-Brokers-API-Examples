@@ -16,11 +16,12 @@ NOTE: This code is using the official Interactive Brokers API (version 9.73) for
 The code I provided is split up between the actual TWS class in IB_API.py, the the order objects based on their types in
 IB_Orders.py, and some examples of how to use them at Example_API_Uses.py. 
 
+The functions in the TWS class in IB_API.py are just wrapper functions overriding the default ibapi package functions
+which sends everything to a log file by default.
+
 Interactive Brokers has thorough documentation of their API at 
 https://interactivebrokers.github.io/tws-api/index.html that is well written and easy to navigate. 
 <br><br>
-The functions in the TWS class in IB_API.py are just wrapper functions overriding the default ibapi package functions
-which sends everything to a log file by default.
 
 
 
