@@ -2,7 +2,7 @@
 
 This repository is for demonstrating how to use the Interactive Brokers API. When getting started with the API, 
 there are not very many examples online that show you how to get setup in the beginning and that is why I created 
-this repository. 
+this project. 
 
 ## Before You Get Started: 
 
