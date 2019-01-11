@@ -11,7 +11,7 @@ import ibapi.ticktype as TickType
 import ibapi.order_state as OrderState
 import logging
 
-#logging.basicConfig(filename="logs/Log_Main.log", level=logging.INFO)
+#logging.basicConfig(filename="logs/IBAPI.log", level=logging.INFO)
 
 # The new and most efficient tws class
 class TWS(EWrapper, EClient):
@@ -45,10 +45,10 @@ class TWS(EWrapper, EClient):
 
 # Simple read and write text file to get the next orderID that we need
 def getNextOrderId():
-    file = open('txt/lastOrder.txt', 'r')
+    file = open('txt/LastOrder.txt', 'r')
     nextOrder = int(file.read()) + 1
     file.close()
-    overwrite = open('txt/lastOrder.txt', 'w')
+    overwrite = open('txt/LastOrder.txt', 'w')
     overwrite.write(str(nextOrder))
     overwrite.close()
     return nextOrder

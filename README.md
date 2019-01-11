@@ -26,22 +26,9 @@ https://interactivebrokers.github.io/tws-api/index.html that is well written and
 Most of the functions in the TWS class are just wrapper functions overriding the default ibapi package functions
 which sends everything to a log file by default. This can be sufficient for most operations but can be easily 
 personalized if they need to be. An example of this is how the reqPositions function in the IB_API.py TWS class is 
-implemented so that it saves the data positions held to a list that can be easily retrieved instead of straight to the log 
+implemented so that it saves the data about the positions held to a list that can be easily retrieved instead of straight to the log 
 file. 
 
-## Summary of how the API Works:
-
-The API is split into 3 main parts: the client, the connection, and the wrapper. The best way to understand it is to just
-start reading their code but I summarized the main parts so that you can have a general idea of what is  happening in 
-their code. 
-
-* The Client (client.py):
-
-* The Connection (connection.py):
-
-* The Wrapper (Wrapper.py): 
-
-
-
+Their Code is pretty well organized and it helps to read through their package contents to get a better idea of how it works. 
 
 
