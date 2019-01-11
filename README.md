@@ -2,17 +2,15 @@
 
 This repository is for demonstrating how to use the Interactive Brokers API. When getting started with the API, 
 there are not a whole lot of models or examples online that show you how to get the api setup in the beginning and that 
-is why I created this project. It covers the basics of how to use the API and where to go from here if you would like
-to continue learning about the more advanced parts of it. 
+is why I created this repository. 
 
 ## Before You Get Started: 
 
 * Make sure to install the Interactive Brokers API at http://interactivebrokers.github.io/
     * Make sure read the instructions for installing it as a package in the file contents because it is not as simple
     as a pip install 
-    
-NOTE: This code is using the official Interactive Brokers API (version 9.73) with their python implementation and may
-differ from their other languages or third party packages. 
+
+NOTE: This code is using the official Interactive Brokers API (version 9.73) for python. 
 
 ## How to use the API:
 
@@ -29,6 +27,5 @@ personalized if they need to be. An example of this is how the reqPositions func
 implemented so that it saves the data about the positions held to a list that can be easily retrieved instead of straight to the log 
 file. 
 
-Their Code is pretty well organized and it helps to read through their package contents to get a better idea of how it works. 
 
 
