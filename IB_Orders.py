@@ -53,7 +53,7 @@ def trailing_stop_order(action, quantity, trailingPercent, trailStopPrice):
     order.trailStopPrice = trailStopPrice
     return order
 
-def BracketOrder(parentOrderId: int, action: str, quantity: float, limitPrice: float,
+def bracket_order(parentOrderId: int, action: str, quantity: float, limitPrice: float,
                  takeProfitLimitPrice: float, stopLossPrice: float):
 
     # This will be our main or "parent" order
