@@ -1,6 +1,6 @@
 # Interactive Brokers API Guide:
 
-This repository is just to show some examples of how to use the Interactive Brokers API for some general cases. 
+This repository is just to show some general examples of how to use the Interactive Brokers API. 
 
 ## Before You Get Started: 
 
@@ -9,7 +9,7 @@ This repository is just to show some examples of how to use the Interactive Brok
 
 ## General Notes:
 
-The code I provided is split up between the actual TWS class in IB_API.py, the the order objects based on their types in
+The code I provided is split up between the actual TWS class in IB_API.py, the order objects in
 IB_Orders.py, and some examples of how to use them at Example_API_Uses.py. 
 
 The functions in the TWS class in IB_API.py are just wrapper functions overriding the default ibapi package functions
