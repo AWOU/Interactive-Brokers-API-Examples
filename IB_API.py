@@ -11,7 +11,7 @@ import ibapi.ticktype as TickType
 import ibapi.order_state as OrderState
 import logging
 
-#logging.basicConfig(filename="logs/IBAPI.log", level=logging.INFO)
+#logging.basicConfig(filename="logs/IB.log", level=logging.INFO)
 
 # The new and most efficient tws class
 class TWS(EWrapper, EClient):
@@ -24,10 +24,7 @@ class TWS(EWrapper, EClient):
 
     def accountSummary(self, reqId: int, account: str, tag: str, value: str,
                        currency: str):
-        super().accountSummary(reqId, account, tag, value, currency) # Since this function is here to override the
-        # original accountSummary function, we call super() first with the same values for it and then add what we really
-        # want it to do under this
-
+        super().accountSummary(reqId, account, tag, value, currency) 
         # Just adding it to a list that we can retrieve from the class
         self.account_info.append([account, tag, value, currency])
 
