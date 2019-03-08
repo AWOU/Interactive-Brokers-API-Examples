@@ -1,8 +1,6 @@
 # Interactive Brokers API Guide:
 
-This repository is for demonstrating how to use the Interactive Brokers API. When getting started with the API, 
-there are not very many examples online that show you how to get setup in the beginning and that is why I created 
-this project. 
+This repository is just to show some examples of how to use the Interactive Brokers API for some general cases. 
 
 ## Before You Get Started: 
 
@@ -17,7 +15,7 @@ The code I provided is split up between the actual TWS class in IB_API.py, the t
 IB_Orders.py, and some examples of how to use them at Example_API_Uses.py. 
 
 The functions in the TWS class in IB_API.py are just wrapper functions overriding the default ibapi package functions
-which sends everything to a log file by default.
+which sends everything to a log file by default. You find all of the wrapper functions in the file wrapper.py in the actual Interactive Brokers package. 
 
 Interactive Brokers has thorough documentation of their API at 
 https://interactivebrokers.github.io/tws-api/index.html that is well written and easy to navigate. 
