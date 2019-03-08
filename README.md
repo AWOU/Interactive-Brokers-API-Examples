@@ -4,10 +4,8 @@ This repository is just to show some examples of how to use the Interactive Brok
 
 ## Before You Get Started: 
 
-Make sure to install the Interactive Brokers API at http://interactivebrokers.github.io/ and read their instructions for 
-installing it because it is a manual pip install. 
-
-NOTE: This code is using the official Interactive Brokers API (version 9.73) for python. 
+1. Install the Interactive Brokers API at http://interactivebrokers.github.io/ 
+2. Enable API access in the Trader Workstation (TWS) application 
 
 ## General Notes:
 
